@@ -40,9 +40,8 @@
                 android:id="@+id/imageView_icon_relative"
                 android:layout_width="50sp"
                 android:layout_height="50sp"
-                android:padding="8dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_baseline_calculate" />
+                android:src="@drawable/avatars" />
 
             <LinearLayout
                 android:id="@+id/linerL_kof"
@@ -50,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/imageView_icon_relative"
                 android:orientation="vertical"
+                android:layout_centerVertical="true"
                 android:layout_toStartOf="@+id/image_open_koff"
                 android:paddingStart="10dp">
 
@@ -173,6 +173,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:visibility="gone"
             android:background="@drawable/backgraund_liner_layout"
             android:layout_marginEnd="10dp"
 
@@ -598,17 +599,123 @@
 
 
 
-
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:layout_marginTop="25dp"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/backgraund_relative_close"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgraund_edit_text"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Город регистраций \nсобственника"
+                android:textSize="20dp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:paddingStart="20sp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgraund_edit_text"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Мощность автомобиля"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:paddingStart="20sp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgraund_edit_text"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Сколько водителей"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:paddingStart="20sp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgraund_edit_text"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Возраст младшего из водителей"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:paddingStart="20sp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgraund_edit_text"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Минимальный стаж водителей"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:paddingStart="20sp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgraund_edit_text"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Сколько лет не было аварий"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:paddingStart="20sp"
+                android:layout_marginBottom="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20sp"/>
 
 
 
 
+        </LinearLayout>
 
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backgraund_relative_close"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="40dp"
+            android:text="Рассчитать ОСАГО"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 
