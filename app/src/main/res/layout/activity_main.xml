@@ -1,727 +1,720 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/grey"
     tools:context=".MainActivity">
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_above="@+id/relative_button">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Калькулятор ОСАГО"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:paddingStart="10dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"/>
+            android:paddingBottom="55dp"
+            android:orientation="vertical">
 
-
-        <RelativeLayout
-            android:id="@+id/coefficient_click"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/backgraund_relative_close"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:padding="10dp">
-
-            <ImageView
-                android:id="@+id/imageView_icon_relative"
-                android:layout_width="50sp"
-                android:layout_height="50sp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/avatars" />
-
-            <LinearLayout
-                android:id="@+id/linerL_kof"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/imageView_icon_relative"
-                android:orientation="vertical"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/image_open_koff"
-                android:paddingStart="10dp">
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/Text_head_main"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="4dp"
-                    android:text="Ваши коэффиценты"
-                    android:textSize="19sp"/>
+
+            <RelativeLayout
+                android:id="@+id/coefficient_click"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/backgraund_relative_close"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView_icon_relative"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/avatars" />
 
                 <LinearLayout
+                    android:id="@+id/linerL_kof"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/image_open_koff"
+                    android:layout_toEndOf="@+id/imageView_icon_relative"
+                    android:orientation="vertical"
+                    android:paddingStart="10dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="БТ"
-                        android:textColor="@color/blue"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
+                        android:paddingTop="4dp"
+                        android:text="@string/Text_koff"
+                        android:textSize="12sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="х"
-                        android:textStyle="bold"
-                        android:textSize="18dp"/>
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="КМ"
-                        android:textColor="@color/blue"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
+                        <TextView
+                            android:id="@+id/koff_BT_close"
+                            android:text="@string/koff_BT_name"
+                            style="@style/KoffCloseTheme"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="х"
-                        android:textStyle="bold"
-                        android:textSize="18dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/x"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="КТ"
-                        android:textColor="@color/blue"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
+                        <TextView
+                            android:id="@+id/koff_KM_close"
+                            android:text="@string/koff_KM"
+                            style="@style/KoffCloseTheme" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="х"
-                        android:textStyle="bold"
-                        android:textSize="18dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/x"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="КБМ"
-                        android:textColor="@color/blue"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
+                        <TextView
+                            android:id="@+id/koff_KT_close"
+                            android:text="@string/koff_KT"
+                            style="@style/KoffCloseTheme" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="х"
-                        android:textStyle="bold"
-                        android:textSize="18dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/x"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="КО"
-                        android:textColor="@color/blue"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
+                        <TextView
+                            android:id="@+id/koff_KBM_close"
+                            android:text="@string/koff_KBM"
+                            style="@style/KoffCloseTheme" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="х"
-                        android:textStyle="bold"
-                        android:textSize="18dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/x"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="КВС"
-                        android:textColor="@color/blue"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
+                        <TextView
+                            android:id="@+id/koff_KO_close"
+                            android:text="@string/koff_KO"
+                            style="@style/KoffCloseTheme"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/x"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/koff_KVS_close"
+                            android:text="@string/koff_KVS"
+                            style="@style/KoffCloseTheme" />
 
 
+                    </LinearLayout>
 
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/image_open_koff"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_down" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/setting_LL_open"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/backgraund_liner_layout"
+                android:orientation="vertical"
+                android:paddingBottom="16dp"
+                android:visibility="gone"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout_BT"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_in_recycleView_BT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toStartOf="@+id/BT_sum"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView_BT_open"
+                                style="@style/KoffOpenTheme"
+                                android:text="@string/koff_BT_name" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="4dp"
+                                android:text="@string/hint_BT"
+                                android:textAllCaps="false"
+                                android:textSize="12sp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Text_BT"
+                            android:textAllCaps="false"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/BT_sum"
+                        style="@style/SumTheme"
+                        android:text="@string/sum_BT"
+                         />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout_KM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_in_recycleView_KM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/KM_cum"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView_KM_open"
+                                style="@style/KoffOpenTheme"
+                                android:text="@string/koff_KM"
+                                 />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="4dp"
+                                android:text="@string/hint_KM"
+                                android:textAllCaps="false"
+                                android:textSize="12sp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Text_KM"
+                            android:textAllCaps="false"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/KM_cum"
+                        style="@style/SumTheme"
+                        android:text="@string/sum_KM"
+                        />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout_KT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="19dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_in_recycleView_KT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/KT_cum"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView_KT_open"
+                                android:text="@string/koff_KT"
+                                style="@style/KoffOpenTheme" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="4dp"
+                                android:text="@string/hint_KT"
+                                android:textSize="12sp"
+                                android:textAllCaps="false" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="@string/Text_KT"
+                            android:textAllCaps="false"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/KT_cum"
+                        style="@style/SumTheme"
+                        android:text="@string/sum_KT"
+                        />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout_KBM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="19dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_in_recycleView_KBM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/KBM_cum"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView_KMB_open"
+                                style="@style/KoffOpenTheme"
+                                android:text="@string/koff_KBM"
+                                 />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="4dp"
+                                android:text="@string/hint_KBM"
+                                android:textSize="12sp"
+                                android:textAllCaps="false" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Text_KBM"
+                            android:textAllCaps="false"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/KBM_cum"
+                        style="@style/SumTheme"
+                        android:text="@string/sum_KBM"
+                        />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout_KO"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="19dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_in_recycleView_KO"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/KO_sum"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView_KO_open"
+                                style="@style/KoffOpenTheme"
+                                android:text="@string/koff_KO"
+                                 />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="4dp"
+                                android:text="@string/hint_KO"
+                                android:textAllCaps="false"
+                                android:textSize="12sp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Text_KO"
+                            android:textAllCaps="false"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/KO_sum"
+                        style="@style/SumTheme"
+                        android:text="@string/sum_KO" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout_KVS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="19dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_in_recycleView_KVS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/KVS_sum"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView_KVS_open"
+                                style="@style/KoffOpenTheme"
+                                android:text="@string/koff_KVS"
+                                 />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="4dp"
+                                android:text="@string/hint_KVS"
+                                android:textSize="12sp"
+                                android:textAllCaps="false" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Text_KVS"
+                            android:textAllCaps="false"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/KVS_sum"
+                        style="@style/SumTheme"
+                        android:text="@string/sum_KVS"
+                         />
+
+
+                </RelativeLayout>
+
 
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/image_open_koff"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="15dp"
-                android:src="@drawable/ic_down"/>
 
-        </RelativeLayout>
-
-
-
-
-        <LinearLayout
-            android:id="@+id/setting_LL_open"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:background="@drawable/backgraund_liner_layout"
-            android:layout_marginEnd="10dp"
-
-            android:layout_marginStart="10dp"
-            android:paddingBottom="15dp">
-
-            <RelativeLayout
-                android:id="@+id/relativeLayout_BT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout_in_recycleView_BT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView_BT_open"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="БТ"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="25sp"
-                            android:layout_marginStart="25dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="(Базорый тариф)"
-                            android:textAllCaps="false"
-                            android:layout_marginStart="7dp"
-                            android:layout_gravity="center_vertical"
-                            />
-
-
-
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Устанавливает страховая\nкомпания"
-                        android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:textSize="17dp"
-                        android:layout_marginStart="25dp"/>
-
-
-                </LinearLayout>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2 754 - 4 432"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_marginStart="10dp"/>
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relativeLayout_KM"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:paddingBottom="16dp"
+                android:background="@drawable/backgraund_relative_close"
+                android:orientation="vertical">
+
 
                 <LinearLayout
-                    android:id="@+id/linearLayout_in_recycleView_KM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                   style="@style/LL_Click_Theme"
+                    >
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView_KM_open"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="KM"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="25sp"
-                            android:layout_marginStart="25dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="(Коэфф. мощности)"
-                            android:textAllCaps="false"
-                            android:layout_marginStart="7dp"
-                            android:layout_gravity="center_vertical"
-                            />
-
-
-
-
-                    </LinearLayout>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/sity_button"
+                        style="@style/TextView_Click_Theme"
+                        android:hint="@string/Button_koff_sity"
+                        android:onClick="Click_Coff"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView_sity"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Чем мощнее автомобиль,\nтем дороже страховой полис"
+                        android:text=""
                         android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:textSize="17dp"
-                        android:layout_marginStart="25dp"/>
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                       />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/LL_Click_Theme"
+                    >
+
+                <TextView
+                    android:id="@+id/power_button"
+                    style="@style/TextView_Click_Theme"
+                    android:hint="@string/Button_koff_car_power"
+                    android:onClick="Click_Coff"/>
+
+                    <TextView
+                        android:id="@+id/textView_power"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                        />
 
 
                 </LinearLayout>
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0,6 - 1,6"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_marginStart="10dp"/>
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relativeLayout_KT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
                 <LinearLayout
-                    android:id="@+id/linearLayout_in_recycleView_KT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    style="@style/LL_Click_Theme"
+                    >
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView_KT_open"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="KT"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="25sp"
-                            android:layout_marginStart="25dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="(Территориальный коэфф.)"
-                            android:textAllCaps="false"
-                            android:layout_marginStart="7dp"
-                            android:layout_gravity="center_vertical"
-                            />
-
-
-
-
-                    </LinearLayout>
+                <TextView
+                    android:id="@+id/driver_button"
+                    style="@style/TextView_Click_Theme"
+                    android:hint="@string/Button_koff_How_many_drivers"
+                    android:onClick="Click_Coff"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/textView_driver"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Определяется по прописке\nсобственника автомобиля"
+                        android:text=""
                         android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:textSize="17dp"
-                        android:layout_marginStart="25dp"/>
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LL_Click_Theme"
+                    >
+
+                <TextView
+                    android:id="@+id/old_button"
+                    style="@style/TextView_Click_Theme"
+                    android:hint="@string/Button_koff_Age_of_drivers"
+                    android:onClick="Click_Coff"/>
+
+                    <TextView
+                        android:id="@+id/textView_old"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LL_Click_Theme"
+                    >
+
+                <TextView
+                    android:id="@+id/min_staj_button"
+                    style="@style/TextView_Click_Theme"
+                    android:hint="@string/Button_koff_Min_driving_experience"
+                    android:onClick="Click_Coff"/>
+
+                    <TextView
+                        android:id="@+id/textView_min_staj"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                        />
 
 
                 </LinearLayout>
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0,64 - 1,99"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_marginStart="10dp"/>
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relativeLayout_KBM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <LinearLayout
-                    android:id="@+id/linearLayout_in_recycleView_KBM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    style="@style/LL_Click_Theme"
+                    >
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/crash_button"
+                    style="@style/TextView_Click_Theme"
+                    android:hint="@string/Button_koff_How_many_years_there_were_no_accidents"
+                    android:onClick="Click_Coff"/>
 
-                        <TextView
-                            android:id="@+id/textView_KMB_open"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="KБМ"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="25sp"
-                            android:layout_marginStart="25dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="(коэфф. безаварийности)"
-                            android:textAllCaps="false"
-                            android:layout_marginStart="7dp"
-                            android:layout_gravity="center_vertical"
-                            />
-
-
-
-
-                    </LinearLayout>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/textView_crash"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Учитывается только самый\nвысокий коэффицент из всех \n водителей"
+                        android:text=""
                         android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:textSize="17dp"
-                        android:layout_marginStart="25dp"/>
-
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                        />
 
                 </LinearLayout>
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0,5 - 2,45"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_marginStart="10dp"/>
-
-
-            </RelativeLayout>
-
-
-
-            <RelativeLayout
-                android:id="@+id/relativeLayout_KO"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout_in_recycleView_KO"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView_KO_open"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="KO"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="25sp"
-                            android:layout_marginStart="25dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="(коэфф. возраст/стаж)"
-                            android:textAllCaps="false"
-                            android:layout_marginStart="7dp"
-                            android:layout_gravity="center_vertical"
-                            />
-
-
-
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Чем больше возраст и стаж\nу вписанного в полис водителя, \n тем дешевле будет полис"
-                        android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:textSize="17sp"
-                        android:layout_marginStart="25dp"/>
-
-
-                </LinearLayout>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0,90 - 1,93"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_marginStart="10dp"/>
-
-
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:id="@+id/relativeLayout_KVS"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout_in_recycleView_KVS"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView_KVS_open"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="KВС"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="25sp"
-                            android:layout_marginStart="25dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="(коэфф. возраст/стаж)"
-                            android:textAllCaps="false"
-                            android:layout_marginStart="7dp"
-                            android:layout_gravity="center_vertical"
-                            />
-
-
-
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Полис с ограниченным списком\nводителей будет стоить дешевле"
-                        android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:textSize="17dp"
-                        android:layout_marginStart="25dp"/>
-
-
-                </LinearLayout>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1 или 1,99"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_marginStart="10dp"/>
-
-
-            </RelativeLayout>
+            </LinearLayout>
 
 
         </LinearLayout>
 
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/backgraund_relative_close"
-            android:orientation="vertical">
-
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backgraund_edit_text"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:hint="Город регистраций \nсобственника"
-                android:textSize="20dp"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:paddingStart="20sp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10sp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backgraund_edit_text"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:hint="Мощность автомобиля"
-                android:textSize="20sp"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:paddingStart="20sp"
-                android:paddingTop="20dp"
-                android:paddingBottom="20sp"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backgraund_edit_text"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:hint="Сколько водителей"
-                android:textSize="20sp"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:paddingStart="20sp"
-                android:paddingTop="20dp"
-                android:paddingBottom="20sp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backgraund_edit_text"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:hint="Возраст младшего из водителей"
-                android:textSize="20sp"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:paddingStart="20sp"
-                android:paddingTop="20dp"
-                android:paddingBottom="20sp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backgraund_edit_text"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:hint="Минимальный стаж водителей"
-                android:textSize="20sp"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:paddingStart="20sp"
-                android:paddingTop="20dp"
-                android:paddingBottom="20sp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backgraund_edit_text"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:hint="Сколько лет не было аварий"
-                android:textSize="20sp"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:paddingStart="20sp"
-                android:layout_marginBottom="20dp"
-                android:paddingTop="20dp"
-                android:paddingBottom="20sp"/>
+    </ScrollView>
 
 
 
-
-        </LinearLayout>
-
-
+    <RelativeLayout
+        android:id="@+id/relative_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
 
         <Button
+            android:id="@+id/button_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/backgraund_relative_close"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="55dp"
-            android:layout_marginBottom="25dp"
-            android:layout_marginTop="40dp"
-            android:text="Рассчитать ОСАГО"
-            android:textAllCaps="false"/>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/backgraund_edit_text"
+            android:textSize="16sp"
+            android:text="@string/Button_bottom_main_osago"
+            android:textAllCaps="false" />
 
-    </LinearLayout>
-
-
-
+    </RelativeLayout>
 
 
 
-</ScrollView>
+
+</RelativeLayout>

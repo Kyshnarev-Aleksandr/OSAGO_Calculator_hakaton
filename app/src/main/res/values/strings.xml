@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">OSAGO Calculator</string>
+    <string name="Text_head_main">Калькулятор ОСАГО</string>
+    <string name="Button_bottom_main_osago">Рассчитать ОСАГО</string>
+    <string name="Button_koff_How_many_years_there_were_no_accidents">Сколько лет не было аварий</string>
+    <string name="Button_koff_Min_driving_experience">Минимальный стаж водителей</string>
+    <string name="Button_koff_Age_of_drivers">Возраст младшего из водителей</string>
+    <string name="Button_koff_How_many_drivers">Сколько водителей</string>
+    <string name="Button_koff_car_power">Мощность автомобиля</string>
+    <string name="Button_koff_sity">Город регистраций собственника</string>
+    <string name="koff_BT_name">БТ</string>
+    <string name="hint_BT">(Базорый тариф)</string>
+    <string name="Text_BT">Устанавливает страховая компания</string>
+    <string name="sum_BT">2 754 - 4 432</string>
+    <string name="koff_KM">KM</string>
+    <string name="hint_KM">(Коэфф. мощности)</string>
+    <string name="Text_KM">Чем мощнее автомобиль, тем дороже страховой полис</string>
+    <string name="sum_KM">0,6 - 1,6</string>
+    <string name="koff_KT">KT</string>
+    <string name="hint_KT">(Территориальный коэфф.)</string>
+    <string name="Text_KT">Определяется по прописке\nсобственника автомобиля</string>
+    <string name="sum_KT">0,64 - 1,99</string>
+    <string name="koff_KBM">KБМ</string>
+    <string name="hint_KBM">(коэфф. безаварийности)</string>
+    <string name="Text_KBM">Учитывается только самый высокий коэффицент из всех водителей</string>
+    <string name="sum_KBM">0,5 - 2,45</string>
+    <string name="koff_KO">KO</string>
+    <string name="hint_KO">(коэфф. возраст/стаж)</string>
+    <string name="Text_KO">Чем больше возраст и стаж у вписанного в полис водителя, тем дешевле будет полис</string>
+    <string name="sum_KO">0,90 - 1,93</string>
+    <string name="koff_KVS">KВС</string>
+    <string name="hint_KVS">(коэфф. возраст/стаж)</string>
+    <string name="Text_KVS">Полис с ограниченным списком водителей будет стоить дешевле</string>
+    <string name="sum_KVS">1 или 1,99</string>
+    <string name="Text_koff">Ваши коэффиценты</string>
+    <string name="x">х</string>
+
 </resources>
