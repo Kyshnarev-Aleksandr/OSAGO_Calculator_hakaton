@@ -24,8 +24,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     TextView koff_BT_close,koff_KM_close,koff_KT_close,koff_KBM_close,koff_KO_close,koff_KVS_close
-             ,textView_sity, textView_power, textView_driver, textView_old, textView_min_staj, textView_crash;
-    TextView power_button,driver_button,old_button,min_staj_button,crash_button, sity_button;
+             , textView_city, textView_power, textView_driver, textView_old, textView_min_staj, textView_crash;
+    TextView power_button,driver_button,old_button,min_staj_button,crash_button, city_button;
 
     ImageView imageView_open_coff, imageView_delete_text;
     LinearLayout layout;
@@ -41,8 +41,16 @@ public class MainActivity extends AppCompatActivity {
     //если закрыто
     boolean close;
 
-    ArrayList<String> arrayList_sity ,arrayList_power, arrayList_driver, arrayList_old, arrayList_min_staj, arrayList_crash;
-    String [] string_sity, string_power, string_driver, string_old, string_min_staj, string_crash;
+    private static final int ADD_CITY_DIALOG = 1;
+    private static final int ADD_POWER_DIALOG = 2;
+    private static final int ADD_DRIVER_DIALOG = 3;
+    private static final int ADD_OLD_DIALOG = 4;
+    private static final int ADD_MIN_STAJ_DIALOG = 5;
+    private static final int ADD_CRASH_DIALOG = 6;
+
+
+    ArrayList<String> arrayList_city,arrayList_power, arrayList_driver, arrayList_old, arrayList_min_staj, arrayList_crash;
+    String [] string_city, string_power, string_driver, string_old, string_min_staj, string_crash;
 
     ArrayAdapter<String> adapter;
     ListView listView;
@@ -75,14 +83,14 @@ public class MainActivity extends AppCompatActivity {
         koff_KO_close = findViewById(R.id.koff_KO_close);
         koff_KVS_close  = findViewById(R.id.koff_KVS_close);
 
-        sity_button = findViewById(R.id.sity_button);
+        city_button = findViewById(R.id.sity_button);
         power_button = findViewById(R.id.power_button);
         driver_button = findViewById(R.id.driver_button);
         old_button = findViewById(R.id.old_button);
         min_staj_button = findViewById(R.id.min_staj_button);
         crash_button = findViewById(R.id.crash_button);
 
-        textView_sity = findViewById(R.id.textView_sity);
+        textView_city = findViewById(R.id.textView_sity);
         textView_power = findViewById(R.id.textView_power);
         textView_driver = findViewById(R.id.textView_driver);
         textView_old = findViewById(R.id.textView_old);
@@ -119,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
     //нажатие на ввод коффициентов
     public void Click_Coff(View view) {
+
         bottomSheet = new BottomSheetDialog(MainActivity.this, R.style.BottomSheetDialogTheme);
         sheetView = LayoutInflater.from(getApplicationContext())
                 .inflate(R.layout.bottom_sheet_item, (LinearLayout)findViewById(R.id.sheet_conteiner));
@@ -133,18 +142,52 @@ public class MainActivity extends AppCompatActivity {
         bottomSheet.setContentView(sheetView);
         bottomSheet.show();
 
+
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                editText.setText(adapter.getItem(position));
+
+            }
+        });
+
+        imageView_delete_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText("");
+            }
+        });
+
+
         switch (view.getId()){
-            case R.id.sity_button:OpenDialogBottom(1);
+            case R.id.sity_button:OpenDialogBottom(ADD_CITY_DIALOG);
                 break;
-            case R.id.power_button:OpenDialogBottom(2);
+            case R.id.power_button:OpenDialogBottom(ADD_POWER_DIALOG);
                 break;
-            case R.id.driver_button:OpenDialogBottom(3);
+            case R.id.driver_button:OpenDialogBottom(ADD_DRIVER_DIALOG);
                 break;
-            case R.id.old_button:OpenDialogBottom(4);
+            case R.id.old_button:OpenDialogBottom(ADD_OLD_DIALOG);
                 break;
-            case R.id.min_staj_button:OpenDialogBottom(5);
+            case R.id.min_staj_button:OpenDialogBottom(ADD_MIN_STAJ_DIALOG);
                 break;
-            case R.id.crash_button:OpenDialogBottom(6);
+            case R.id.crash_button:OpenDialogBottom(ADD_CRASH_DIALOG);
                 break;
         }
     }
@@ -152,99 +195,38 @@ public class MainActivity extends AppCompatActivity {
     //отображение и изминение данных в шторке
     private void OpenDialogBottom(int key) {
         switch (key){
-            case 1:
+            case ADD_CITY_DIALOG:
+
                 textView_head_dialog.setText("Город регистраций собственника");
                 button_Dialog_next.setText("Далее >");
                 editText.setHint("Введите город");
 
-                adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, arrayList_sity);
+                adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, arrayList_city);
                 listView.setAdapter(adapter);
 
-                editText.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        adapter.getFilter().filter(s);
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-
-                    }
-                });
-
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        editText.setText(adapter.getItem(position));
-
-                    }
-                });
-
-                imageView_delete_text.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        editText.setText("");
-                    }
-                });
 
                 button_Dialog_next.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        sity_button.setTextSize(12);
-                        sity_button.setPadding(0,0,0,0);
-                        textView_sity.setVisibility(View.VISIBLE);
-                        textView_sity.setText(editText.getText().toString());
+                        city_button.setTextSize(12);
+                        city_button.setPadding(0,0,0,0);
+                        textView_city.setVisibility(View.VISIBLE);
+                        textView_city.setText(editText.getText().toString());
                         editText.setText("");
-                        OpenDialogBottom(2);
+                        OpenDialogBottom(ADD_POWER_DIALOG);
                     }
                 });
 
                 break;
 
-            case 2:
+            case ADD_POWER_DIALOG:
                 textView_head_dialog.setText("Мощность автомобиля");
                 button_Dialog_next.setText("Далее >");
                 editText.setHint("Введите мощность");
 
                 adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, arrayList_power);
                 listView.setAdapter(adapter);
-
-                editText.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        adapter.getFilter().filter(s);
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-
-                    }
-                });
-
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        editText.setText(adapter.getItem(position));
-
-                    }
-                });
-
-                imageView_delete_text.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        editText.setText("");
-                    }
-                });
 
                 button_Dialog_next.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -254,7 +236,7 @@ public class MainActivity extends AppCompatActivity {
                         textView_power.setVisibility(View.VISIBLE);
                         textView_power.setText(editText.getText().toString());
                         editText.setText("");
-                        OpenDialogBottom(3);
+                        OpenDialogBottom(ADD_DRIVER_DIALOG);
                     }
                 });
 
@@ -262,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            case 3:
+            case ADD_DRIVER_DIALOG:
                 textView_head_dialog.setText("Сколько водителей");
                 button_Dialog_next.setText("Далее >");
                 editText.setHint("Введите колличество водителей");
@@ -270,37 +252,6 @@ public class MainActivity extends AppCompatActivity {
                 adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, arrayList_driver);
                 listView.setAdapter(adapter);
 
-                editText.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        adapter.getFilter().filter(s);
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-
-                    }
-                });
-
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        editText.setText(adapter.getItem(position));
-
-                    }
-                });
-
-                imageView_delete_text.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        editText.setText("");
-                    }
-                });
 
                 button_Dialog_next.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -312,17 +263,17 @@ public class MainActivity extends AppCompatActivity {
 
                         if (editText.getText().toString().equals("Без ограничений")){
                             editText.setText("");
-                            OpenDialogBottom(5);
+                            OpenDialogBottom(ADD_MIN_STAJ_DIALOG);
                         }else {
                             editText.setText("");
-                            OpenDialogBottom(4);
+                            OpenDialogBottom(ADD_OLD_DIALOG);
                         }
 
                     }
                 });
 
                 break;
-            case 4:
+            case ADD_OLD_DIALOG:
                 textView_head_dialog.setText("Возраст младшего из водителей");
                 button_Dialog_next.setText("Далее >");
                 editText.setHint("Введите возраст младшего из водителей");
@@ -330,37 +281,7 @@ public class MainActivity extends AppCompatActivity {
                 adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, arrayList_old);
                 listView.setAdapter(adapter);
 
-                editText.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        adapter.getFilter().filter(s);
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-
-                    }
-                });
-
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        editText.setText(adapter.getItem(position));
-
-                    }
-                });
-
-                imageView_delete_text.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        editText.setText("");
-                    }
-                });
 
                 button_Dialog_next.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -370,13 +291,13 @@ public class MainActivity extends AppCompatActivity {
                         textView_old.setVisibility(View.VISIBLE);
                         textView_old.setText(editText.getText().toString());
                         editText.setText("");
-                        OpenDialogBottom(5);
+                        OpenDialogBottom(ADD_MIN_STAJ_DIALOG);
                     }
                 });
 
                 break;
 
-            case 5:
+            case ADD_MIN_STAJ_DIALOG:
                 textView_head_dialog.setText("Минимальный стаж водителей");
                 button_Dialog_next.setText("Далее >");
                 editText.setHint("Введите минимальный стаж");
@@ -385,37 +306,6 @@ public class MainActivity extends AppCompatActivity {
                 adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, arrayList_min_staj);
                 listView.setAdapter(adapter);
 
-                editText.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        adapter.getFilter().filter(s);
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-
-                    }
-                });
-
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        editText.setText(adapter.getItem(position));
-
-                    }
-                });
-
-                imageView_delete_text.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        editText.setText("");
-                    }
-                });
 
                 button_Dialog_next.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -425,51 +315,19 @@ public class MainActivity extends AppCompatActivity {
                         textView_min_staj.setVisibility(View.VISIBLE);
                         textView_min_staj.setText(editText.getText().toString());
                         editText.setText("");
-                        OpenDialogBottom(6);
+                        OpenDialogBottom(ADD_CRASH_DIALOG);
                     }
                 });
 
                 break;
 
-            case 6:
+            case ADD_CRASH_DIALOG:
                 textView_head_dialog.setText("Сколько лет небыло аварий");
                 button_Dialog_next.setText("Подтвердить");
                 editText.setHint("Введите сколько лет небыло аварий");
 
                 adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, arrayList_crash);
                 listView.setAdapter(adapter);
-
-                editText.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        adapter.getFilter().filter(s);
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-
-                    }
-                });
-
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        editText.setText(adapter.getItem(position));
-
-                    }
-                });
-
-                imageView_delete_text.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        editText.setText("");
-                    }
-                });
 
                 button_Dialog_next.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -489,15 +347,12 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-
-
-
     }
 
-
+    //array
     private void ArrayInit() {
 
-        string_sity = new String[]{"Москва", "Магнитогорск", "Магадан"};
+        string_city = new String[]{"Москва", "Магнитогорск", "Магадан"};
         string_power = new String[]{"от 1 до 50", "от 51 до 99", "от 100 до 150", "от 151 до 200", "более 200"};
         string_driver = new String[]{"Без ограничений", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
         string_old = new String[]{"18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32"};
@@ -506,9 +361,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        arrayList_sity = new ArrayList<>();
-        for (String i : string_sity){
-            arrayList_sity.add(i);
+        arrayList_city = new ArrayList<>();
+
+        for (String i : string_city){
+            arrayList_city.add(i);
         }
 
 

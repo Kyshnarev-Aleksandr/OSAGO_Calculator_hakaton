@@ -31,7 +31,6 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
-
             <RelativeLayout
                 android:id="@+id/coefficient_click"
                 android:layout_width="match_parent"
@@ -134,10 +133,7 @@
                             android:id="@+id/koff_KVS_close"
                             android:text="@string/koff_KVS"
                             style="@style/KoffCloseTheme" />
-
-
                     </LinearLayout>
-
                 </LinearLayout>
 
                 <ImageView
@@ -150,7 +146,6 @@
                     android:src="@drawable/ic_down" />
 
             </RelativeLayout>
-
 
             <LinearLayout
                 android:id="@+id/setting_LL_open"
@@ -197,8 +192,6 @@
                                 android:text="@string/hint_BT"
                                 android:textAllCaps="false"
                                 android:textSize="12sp" />
-
-
                         </LinearLayout>
 
                         <TextView
@@ -208,18 +201,13 @@
                             android:textAllCaps="false"
                             android:textSize="12sp"
                             android:textStyle="bold" />
-
-
                     </LinearLayout>
-
 
                     <TextView
                         android:id="@+id/BT_sum"
                         style="@style/SumTheme"
                         android:text="@string/sum_BT"
                          />
-
-
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -256,8 +244,6 @@
                                 android:text="@string/hint_KM"
                                 android:textAllCaps="false"
                                 android:textSize="12sp" />
-
-
                         </LinearLayout>
 
                         <TextView
@@ -267,18 +253,13 @@
                             android:textAllCaps="false"
                             android:textSize="12sp"
                             android:textStyle="bold" />
-
-
                     </LinearLayout>
-
 
                     <TextView
                         android:id="@+id/KM_cum"
                         style="@style/SumTheme"
                         android:text="@string/sum_KM"
                         />
-
-
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -314,30 +295,22 @@
                                 android:text="@string/hint_KT"
                                 android:textSize="12sp"
                                 android:textAllCaps="false" />
-
-
                         </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="@string/Text_KT"
                             android:textAllCaps="false"
                             android:textSize="12sp"
                             android:textStyle="bold" />
-
-
                     </LinearLayout>
-
 
                     <TextView
                         android:id="@+id/KT_cum"
                         style="@style/SumTheme"
                         android:text="@string/sum_KT"
                         />
-
-
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -374,8 +347,6 @@
                                 android:text="@string/hint_KBM"
                                 android:textSize="12sp"
                                 android:textAllCaps="false" />
-
-
                         </LinearLayout>
 
                         <TextView
@@ -385,20 +356,14 @@
                             android:textAllCaps="false"
                             android:textSize="12sp"
                             android:textStyle="bold" />
-
-
                     </LinearLayout>
-
 
                     <TextView
                         android:id="@+id/KBM_cum"
                         style="@style/SumTheme"
                         android:text="@string/sum_KBM"
                         />
-
-
                 </RelativeLayout>
-
 
                 <RelativeLayout
                     android:id="@+id/relativeLayout_KO"
@@ -435,7 +400,6 @@
                                 android:textAllCaps="false"
                                 android:textSize="12sp" />
 
-
                         </LinearLayout>
 
                         <TextView
@@ -445,19 +409,13 @@
                             android:textAllCaps="false"
                             android:textSize="12sp"
                             android:textStyle="bold" />
-
-
                     </LinearLayout>
-
 
                     <TextView
                         android:id="@+id/KO_sum"
                         style="@style/SumTheme"
                         android:text="@string/sum_KO" />
-
-
                 </RelativeLayout>
-
 
                 <RelativeLayout
                     android:id="@+id/relativeLayout_KVS"
@@ -493,8 +451,6 @@
                                 android:text="@string/hint_KVS"
                                 android:textSize="12sp"
                                 android:textAllCaps="false" />
-
-
                         </LinearLayout>
 
                         <TextView
@@ -504,40 +460,29 @@
                             android:textAllCaps="false"
                             android:textSize="12sp"
                             android:textStyle="bold" />
-
-
                     </LinearLayout>
-
 
                     <TextView
                         android:id="@+id/KVS_sum"
                         style="@style/SumTheme"
                         android:text="@string/sum_KVS"
                          />
-
-
                 </RelativeLayout>
-
-
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="16dp"
                 android:paddingBottom="16dp"
                 android:background="@drawable/backgraund_relative_close"
                 android:orientation="vertical">
 
-
                 <LinearLayout
                    style="@style/LL_Click_Theme"
                     >
-
-
                     <TextView
                         android:id="@+id/sity_button"
                         style="@style/TextView_Click_Theme"
@@ -557,7 +502,6 @@
                        />
 
                 </LinearLayout>
-
 
                 <LinearLayout
                     style="@style/LL_Click_Theme"
@@ -579,15 +523,11 @@
                         android:textColor="@color/black"
                         android:visibility="gone"
                         />
-
-
                 </LinearLayout>
-
 
                 <LinearLayout
                     style="@style/LL_Click_Theme"
                     >
-
                 <TextView
                     android:id="@+id/driver_button"
                     style="@style/TextView_Click_Theme"
@@ -604,8 +544,6 @@
                         android:textColor="@color/black"
                         android:visibility="gone"
                         />
-
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -628,8 +566,6 @@
                         android:textColor="@color/black"
                         android:visibility="gone"
                         />
-
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -652,10 +588,7 @@
                         android:textColor="@color/black"
                         android:visibility="gone"
                         />
-
-
                 </LinearLayout>
-
 
                 <LinearLayout
                     style="@style/LL_Click_Theme"
@@ -666,7 +599,6 @@
                     style="@style/TextView_Click_Theme"
                     android:hint="@string/Button_koff_How_many_years_there_were_no_accidents"
                     android:onClick="Click_Coff"/>
-
 
                     <TextView
                         android:id="@+id/textView_crash"
@@ -680,17 +612,9 @@
                         />
 
                 </LinearLayout>
-
-
             </LinearLayout>
-
-
         </LinearLayout>
-
-
     </ScrollView>
-
-
 
     <RelativeLayout
         android:id="@+id/relative_button"
@@ -713,8 +637,4 @@
             android:textAllCaps="false" />
 
     </RelativeLayout>
-
-
-
-
 </RelativeLayout>

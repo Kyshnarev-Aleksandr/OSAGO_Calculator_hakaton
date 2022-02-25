@@ -35,4 +35,13 @@
     <string name="Text_koff">Ваши коэффиценты</string>
     <string name="x">х</string>
 
+    <string-array name="city">
+        <item></item>
+
+
+
+
+
+    </string-array>
+
 </resources>
