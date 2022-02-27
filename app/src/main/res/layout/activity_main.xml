@@ -481,13 +481,15 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/LL_city"
+                    android:onClick="Click_Coff"
                    style="@style/LL_Click_Theme"
                     >
                     <TextView
                         android:id="@+id/sity_button"
                         style="@style/TextView_Click_Theme"
                         android:hint="@string/Button_koff_sity"
-                        android:onClick="Click_Coff"
+
                         />
 
                     <TextView
@@ -504,14 +506,14 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/LL_power"
+                    android:onClick="Click_Coff"
                     style="@style/LL_Click_Theme"
                     >
-
                 <TextView
                     android:id="@+id/power_button"
                     style="@style/TextView_Click_Theme"
-                    android:hint="@string/Button_koff_car_power"
-                    android:onClick="Click_Coff"/>
+                    android:hint="@string/Button_koff_car_power"/>
 
                     <TextView
                         android:id="@+id/textView_power"
@@ -526,13 +528,14 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/LL_driver"
+                    android:onClick="Click_Coff"
                     style="@style/LL_Click_Theme"
                     >
                 <TextView
                     android:id="@+id/driver_button"
                     style="@style/TextView_Click_Theme"
-                    android:hint="@string/Button_koff_How_many_drivers"
-                    android:onClick="Click_Coff"/>
+                    android:hint="@string/Button_koff_How_many_drivers"/>
 
                     <TextView
                         android:id="@+id/textView_driver"
@@ -547,14 +550,15 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/LL_old"
+                    android:onClick="Click_Coff"
                     style="@style/LL_Click_Theme"
                     >
 
                 <TextView
                     android:id="@+id/old_button"
                     style="@style/TextView_Click_Theme"
-                    android:hint="@string/Button_koff_Age_of_drivers"
-                    android:onClick="Click_Coff"/>
+                    android:hint="@string/Button_koff_Age_of_drivers" />
 
                     <TextView
                         android:id="@+id/textView_old"
@@ -569,14 +573,14 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/LL_min_staj"
+                    android:onClick="Click_Coff"
                     style="@style/LL_Click_Theme"
                     >
-
                 <TextView
                     android:id="@+id/min_staj_button"
                     style="@style/TextView_Click_Theme"
-                    android:hint="@string/Button_koff_Min_driving_experience"
-                    android:onClick="Click_Coff"/>
+                    android:hint="@string/Button_koff_Min_driving_experience" />
 
                     <TextView
                         android:id="@+id/textView_min_staj"
@@ -591,14 +595,15 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/LL_crash"
+                    android:onClick="Click_Coff"
                     style="@style/LL_Click_Theme"
                     >
 
                 <TextView
                     android:id="@+id/crash_button"
                     style="@style/TextView_Click_Theme"
-                    android:hint="@string/Button_koff_How_many_years_there_were_no_accidents"
-                    android:onClick="Click_Coff"/>
+                    android:hint="@string/Button_koff_How_many_years_there_were_no_accidents" />
 
                     <TextView
                         android:id="@+id/textView_crash"
@@ -630,6 +635,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
+            android:clickable="false"
+            android:textColor="@color/button_noClick"
             android:layout_marginBottom="16dp"
             android:background="@drawable/backgraund_edit_text"
             android:textSize="16sp"

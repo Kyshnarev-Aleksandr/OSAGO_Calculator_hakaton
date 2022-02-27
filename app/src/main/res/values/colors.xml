@@ -10,4 +10,5 @@
     <color name="blue">#26C9FB</color>
     <color name="grey">#E9E6E6</color>
     <color name="background_color">#00AFFF</color>
+    <color name="button_noClick">#B3BAC3</color>
 </resources>

@@ -36,12 +36,70 @@
     <string name="x">х</string>
 
     <string-array name="city">
-        <item></item>
-
-
-
-
-
+        <item>Москва</item>
+        <item>Магнитогорск</item>
+        <item>Магадан</item>
     </string-array>
+
+    <string-array name="power">
+        <item>от 1 до 50</item>
+        <item>от 51 до 99</item>
+        <item>от 100 до 150</item>
+        <item>от 151 до 200</item>
+        <item>более 200</item>
+    </string-array>
+
+    <string-array name="driver">
+        <item>Без ограничений</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="old">
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+    </string-array>
+
+    <string-array name="min_staj">
+        <item>Без стажа</item>
+        <item>Меньше одного года</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="crash">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+
+
 
 </resources>
