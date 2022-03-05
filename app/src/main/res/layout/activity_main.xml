@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/grey"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,6 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
                 android:paddingStart="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
@@ -60,8 +61,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
                         android:paddingTop="4dp"
                         android:text="@string/Text_koff"
+                        android:textColor="@color/text_color"
                         android:textSize="12sp" />
 
                     <LinearLayout
@@ -71,8 +74,8 @@
 
                         <TextView
                             android:id="@+id/koff_BT_close"
-                            android:text="@string/koff_BT_name"
-                            style="@style/KoffCloseTheme"/>
+                            style="@style/KoffCloseTheme"
+                            android:text="@string/koff_BT_name" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -171,7 +174,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
-                        android:layout_toStartOf="@+id/BT_sum"
+                        android:layout_toStartOf="@+id/koff_BT_open"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -185,26 +188,19 @@
                                 android:text="@string/koff_BT_name" />
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="4dp"
+                               style="@style/Hint_coff"
                                 android:text="@string/hint_BT"
-                                android:textAllCaps="false"
-                                android:textSize="12sp" />
+                                 />
                         </LinearLayout>
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/TextView_Bottom_Style"
                             android:text="@string/Text_BT"
-                            android:textAllCaps="false"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            />
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/BT_sum"
+                        android:id="@+id/koff_BT_open"
                         style="@style/SumTheme"
                         android:text="@string/sum_BT"
                          />
@@ -222,7 +218,7 @@
                         android:id="@+id/linearLayout_in_recycleView_KM"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toStartOf="@+id/KM_cum"
+                        android:layout_toStartOf="@+id/koff_KM_open"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -237,26 +233,19 @@
                                  />
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="4dp"
+                                style="@style/Hint_coff"
                                 android:text="@string/hint_KM"
-                                android:textAllCaps="false"
-                                android:textSize="12sp" />
+                                 />
                         </LinearLayout>
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/TextView_Bottom_Style"
                             android:text="@string/Text_KM"
-                            android:textAllCaps="false"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                             />
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/KM_cum"
+                        android:id="@+id/koff_KM_open"
                         style="@style/SumTheme"
                         android:text="@string/sum_KM"
                         />
@@ -274,7 +263,7 @@
                         android:id="@+id/linearLayout_in_recycleView_KT"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toStartOf="@+id/KT_cum"
+                        android:layout_toStartOf="@+id/koff_KT_open"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -288,26 +277,19 @@
                                 style="@style/KoffOpenTheme" />
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="4dp"
+                                style="@style/Hint_coff"
                                 android:text="@string/hint_KT"
-                                android:textSize="12sp"
-                                android:textAllCaps="false" />
+                                />
                         </LinearLayout>
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/TextView_Bottom_Style"
                             android:text="@string/Text_KT"
-                            android:textAllCaps="false"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            />
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/KT_cum"
+                        android:id="@+id/koff_KT_open"
                         style="@style/SumTheme"
                         android:text="@string/sum_KT"
                         />
@@ -325,7 +307,7 @@
                         android:id="@+id/linearLayout_in_recycleView_KBM"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toStartOf="@+id/KBM_cum"
+                        android:layout_toStartOf="@+id/koff_KBM_open"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -340,26 +322,19 @@
                                  />
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="4dp"
+                                style="@style/Hint_coff"
                                 android:text="@string/hint_KBM"
-                                android:textSize="12sp"
-                                android:textAllCaps="false" />
+                                 />
                         </LinearLayout>
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/TextView_Bottom_Style"
                             android:text="@string/Text_KBM"
-                            android:textAllCaps="false"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            />
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/KBM_cum"
+                        android:id="@+id/koff_KBM_open"
                         style="@style/SumTheme"
                         android:text="@string/sum_KBM"
                         />
@@ -377,7 +352,7 @@
                         android:id="@+id/linearLayout_in_recycleView_KO"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toStartOf="@+id/KO_sum"
+                        android:layout_toStartOf="@+id/koff_KO_open"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -392,27 +367,20 @@
                                  />
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="4dp"
+                                style="@style/Hint_coff"
                                 android:text="@string/hint_KO"
-                                android:textAllCaps="false"
-                                android:textSize="12sp" />
+                                />
 
                         </LinearLayout>
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/TextView_Bottom_Style"
                             android:text="@string/Text_KO"
-                            android:textAllCaps="false"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            />
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/KO_sum"
+                        android:id="@+id/koff_KO_open"
                         style="@style/SumTheme"
                         android:text="@string/sum_KO" />
                 </RelativeLayout>
@@ -429,7 +397,7 @@
                         android:id="@+id/linearLayout_in_recycleView_KVS"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toStartOf="@+id/KVS_sum"
+                        android:layout_toStartOf="@+id/koff_KVS_open"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -444,26 +412,19 @@
                                  />
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="4dp"
+                                style="@style/Hint_coff"
                                 android:text="@string/hint_KVS"
-                                android:textSize="12sp"
-                                android:textAllCaps="false" />
+                                />
                         </LinearLayout>
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/TextView_Bottom_Style"
                             android:text="@string/Text_KVS"
-                            android:textAllCaps="false"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            />
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/KVS_sum"
+                        android:id="@+id/koff_KVS_open"
                         style="@style/SumTheme"
                         android:text="@string/sum_KVS"
                          />
@@ -482,13 +443,14 @@
 
                 <LinearLayout
                     android:id="@+id/LL_city"
-                    android:onClick="Click_Coff"
+                    android:onClick="click_Coff"
                    style="@style/LL_Click_Theme"
                     >
                     <TextView
                         android:id="@+id/sity_button"
                         style="@style/TextView_Click_Theme"
-                        android:hint="@string/Button_koff_sity"
+                        android:textColor="@color/main_60"
+                        android:text="@string/koff_city"
 
                         />
 
@@ -497,9 +459,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text=""
+                        android:fontFamily="@font/roboto"
                         android:textAllCaps="false"
                         android:textSize="16sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/main_100"
                         android:visibility="gone"
                        />
 
@@ -507,35 +470,38 @@
 
                 <LinearLayout
                     android:id="@+id/LL_power"
-                    android:onClick="Click_Coff"
+                    android:onClick="click_Coff"
                     style="@style/LL_Click_Theme"
                     >
                 <TextView
                     android:id="@+id/power_button"
                     style="@style/TextView_Click_Theme"
-                    android:hint="@string/Button_koff_car_power"/>
+                    android:textColor="@color/main_60"
+                    android:text="@string/koff_car_power"/>
 
                     <TextView
                         android:id="@+id/textView_power"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text=""
+                        android:fontFamily="@font/roboto"
                         android:textAllCaps="false"
                         android:textSize="16sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/main_100"
                         android:visibility="gone"
                         />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/LL_driver"
-                    android:onClick="Click_Coff"
+                    android:onClick="click_Coff"
                     style="@style/LL_Click_Theme"
                     >
                 <TextView
                     android:id="@+id/driver_button"
                     style="@style/TextView_Click_Theme"
-                    android:hint="@string/Button_koff_How_many_drivers"/>
+                    android:textColor="@color/main_60"
+                    android:text="@string/koff_How_many_drivers"/>
 
                     <TextView
                         android:id="@+id/textView_driver"
@@ -543,44 +509,48 @@
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textAllCaps="false"
+                        android:fontFamily="@font/roboto"
                         android:textSize="16sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/main_100"
                         android:visibility="gone"
                         />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/LL_old"
-                    android:onClick="Click_Coff"
+                    android:onClick="click_Coff"
                     style="@style/LL_Click_Theme"
                     >
 
                 <TextView
                     android:id="@+id/old_button"
                     style="@style/TextView_Click_Theme"
-                    android:hint="@string/Button_koff_Age_of_drivers" />
+                    android:textColor="@color/main_60"
+                    android:text="@string/koff_Age_of_drivers" />
 
                     <TextView
                         android:id="@+id/textView_old"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text=""
+                        android:fontFamily="@font/roboto"
                         android:textAllCaps="false"
                         android:textSize="16sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/main_100"
                         android:visibility="gone"
                         />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/LL_min_staj"
-                    android:onClick="Click_Coff"
+                    android:onClick="click_Coff"
                     style="@style/LL_Click_Theme"
                     >
                 <TextView
                     android:id="@+id/min_staj_button"
                     style="@style/TextView_Click_Theme"
-                    android:hint="@string/Button_koff_Min_driving_experience" />
+                    android:textColor="@color/main_60"
+                    android:text="@string/koff_Min_driving_experience" />
 
                     <TextView
                         android:id="@+id/textView_min_staj"
@@ -588,31 +558,34 @@
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textAllCaps="false"
+                        android:fontFamily="@font/roboto"
                         android:textSize="16sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/main_100"
                         android:visibility="gone"
                         />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/LL_crash"
-                    android:onClick="Click_Coff"
+                    android:onClick="click_Coff"
                     style="@style/LL_Click_Theme"
                     >
 
                 <TextView
                     android:id="@+id/crash_button"
                     style="@style/TextView_Click_Theme"
-                    android:hint="@string/Button_koff_How_many_years_there_were_no_accidents" />
+                    android:textColor="@color/main_60"
+                    android:text="@string/koff_How_many_years_there_were_no_accidents" />
 
                     <TextView
                         android:id="@+id/textView_crash"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text=""
+                        android:fontFamily="@font/roboto"
                         android:textAllCaps="false"
                         android:textSize="16sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/main_100"
                         android:visibility="gone"
                         />
 
@@ -635,7 +608,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
-            android:clickable="false"
+            android:enabled="false"
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/button_noClick"
             android:layout_marginBottom="16dp"
             android:background="@drawable/backgraund_edit_text"

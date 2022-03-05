@@ -35,6 +35,7 @@
             android:layout_marginTop="16dp"
             android:paddingTop="17dp"
             android:paddingBottom="17dp"
+            android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="17sp"
             android:focusable="true"
             android:layout_centerVertical="true"
@@ -58,20 +59,43 @@
             android:id="@+id/listView"
             android:layout_width="match_parent"
             android:layout_height="250dp"/>
-        <Button
-            android:id="@+id/button_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:layout_gravity="end"
-            android:text="Далее >"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:paddingBottom="14dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="40dp"
-            android:paddingTop="14dp"
-            android:background="@drawable/background_button_bottom_sheet"
-            android:layout_marginEnd="16dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button_next"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/background_button_bottom_sheet"
+                android:drawableEnd="@drawable/ic_right"
+                android:paddingStart="16dp"
+                android:paddingTop="14dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="14dp"
+                android:text="@string/Button_dialog_next"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/image_go_back_dialog"
+                android:layout_width="78dp"
+                android:layout_height="78dp"
+                android:layout_marginTop="45dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/button_back" />
+        </RelativeLayout>
+
+
     </LinearLayout>
+
+
+
+
 </LinearLayout>

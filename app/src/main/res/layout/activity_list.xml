@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/grey"
+    android:layout_height="match_parent"
+    tools:context=".Activity.List_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/coefficient_click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/backgraund_relative_close"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imageView_icon_relative"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/avatars" />
+
+        <LinearLayout
+            android:id="@+id/linerL_kof"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/image_open_koff"
+            android:layout_toEndOf="@+id/imageView_icon_relative"
+            android:orientation="vertical"
+            android:paddingStart="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:paddingTop="4dp"
+                android:text="@string/Text_koff"
+                android:textColor="@color/text_color"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/koff_BT_close"
+                    style="@style/KoffCloseTheme"
+                    android:text="@string/koff_BT_name" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/x"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/koff_KM_close"
+                    android:text="@string/koff_KM"
+                    style="@style/KoffCloseTheme" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/x"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/koff_KT_close"
+                    android:text="@string/koff_KT"
+                    style="@style/KoffCloseTheme" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/x"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/koff_KBM_close"
+                    android:text="@string/koff_KBM"
+                    style="@style/KoffCloseTheme" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/x"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/koff_KO_close"
+                    android:text="@string/koff_KO"
+                    style="@style/KoffCloseTheme"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/x"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/koff_KVS_close"
+                    android:text="@string/koff_KVS"
+                    style="@style/KoffCloseTheme" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/image_open_koff"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/ic_down" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/setting_LL_open"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/backgraund_liner_layout"
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_BT"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_in_recycleView_BT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/koff_BT_open"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView_BT_open"
+                        style="@style/KoffOpenTheme"
+                        android:text="@string/koff_BT_name" />
+
+                    <TextView
+                        style="@style/Hint_coff"
+                        android:text="@string/hint_BT"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TextView_Bottom_Style"
+                    android:text="@string/Text_BT"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/koff_BT_open"
+                style="@style/SumTheme"
+                android:text="@string/sum_BT"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_KM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_in_recycleView_KM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/koff_KM_open"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView_KM_open"
+                        style="@style/KoffOpenTheme"
+                        android:text="@string/koff_KM"
+                        />
+
+                    <TextView
+                        style="@style/Hint_coff"
+                        android:text="@string/hint_KM"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TextView_Bottom_Style"
+                    android:text="@string/Text_KM"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/koff_KM_open"
+                style="@style/SumTheme"
+                android:text="@string/sum_KM"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_KT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="19dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_in_recycleView_KT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/koff_KT_open"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView_KT_open"
+                        android:text="@string/koff_KT"
+                        style="@style/KoffOpenTheme" />
+
+                    <TextView
+                        style="@style/Hint_coff"
+                        android:text="@string/hint_KT"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TextView_Bottom_Style"
+                    android:text="@string/Text_KT"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/koff_KT_open"
+                style="@style/SumTheme"
+                android:text="@string/sum_KT"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_KBM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="19dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_in_recycleView_KBM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/koff_KBM_open"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView_KMB_open"
+                        style="@style/KoffOpenTheme"
+                        android:text="@string/koff_KBM"
+                        />
+
+                    <TextView
+                        style="@style/Hint_coff"
+                        android:text="@string/hint_KBM"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TextView_Bottom_Style"
+                    android:text="@string/Text_KBM"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/koff_KBM_open"
+                style="@style/SumTheme"
+                android:text="@string/sum_KBM"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_KO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="19dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_in_recycleView_KO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/koff_KO_open"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView_KO_open"
+                        style="@style/KoffOpenTheme"
+                        android:text="@string/koff_KO"
+                        />
+
+                    <TextView
+                        style="@style/Hint_coff"
+                        android:text="@string/hint_KO"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TextView_Bottom_Style"
+                    android:text="@string/Text_KO"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/koff_KO_open"
+                style="@style/SumTheme"
+                android:text="@string/sum_KO" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_KVS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="19dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_in_recycleView_KVS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/koff_KVS_open"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView_KVS_open"
+                        style="@style/KoffOpenTheme"
+                        android:text="@string/koff_KVS"
+                        />
+
+                    <TextView
+                        style="@style/Hint_coff"
+                        android:text="@string/hint_KVS"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TextView_Bottom_Style"
+                    android:text="@string/Text_KVS"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/koff_KVS_open"
+                style="@style/SumTheme"
+                android:text="@string/sum_KVS"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

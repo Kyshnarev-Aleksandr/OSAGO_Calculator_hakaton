@@ -8,7 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#26C9FB</color>
-    <color name="grey">#E9E6E6</color>
+    <color name="grey">#F4F7FB</color>
     <color name="background_color">#00AFFF</color>
     <color name="button_noClick">#B3BAC3</color>
+    <color name="text_color">#99A1AB</color>
+    <color name="main_60">#636F7D</color>
+    <color name="main_100">#142438</color>
 </resources>

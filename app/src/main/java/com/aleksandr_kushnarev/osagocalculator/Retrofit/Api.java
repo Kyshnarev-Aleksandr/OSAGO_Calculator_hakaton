@@ -1,6 +1,6 @@
 package com.aleksandr_kushnarev.osagocalculator.Retrofit;
 
-import com.aleksandr_kushnarev.osagocalculator.Model.Example;
+import com.aleksandr_kushnarev.osagocalculator.Model.ArrayHeader;
 
 import java.util.Map;
 
@@ -12,5 +12,5 @@ import retrofit2.http.POST;
 public interface Api {
     @FormUrlEncoded
     @POST("rationDetail")
-    Call<Example> createUser(@FieldMap Map<String, String> params);
+    Call<ArrayHeader> createUser(@FieldMap Map<String, String> params);
 }
