@@ -106,6 +106,9 @@ public class ShowDialog {
         adapter = new ArrayAdapter<>(activity, android.R.layout.simple_list_item_1, stringArray);
         listView.setAdapter(adapter);
 
+        if (next_key == MAX_METHOD){
+            button_Dialog_next.setText(R.string.text_button_dialog);
+        }
         button_Dialog_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,19 +126,11 @@ public class ShowDialog {
                 }
             }
         });
-
         image_go_back_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (next_key > MIN_METHOD) ((MainActivity)activity).dataDialog(next_key - NEXT_METHOD);
             }
         });
-
     }
-
-
-
-
-
-
 }

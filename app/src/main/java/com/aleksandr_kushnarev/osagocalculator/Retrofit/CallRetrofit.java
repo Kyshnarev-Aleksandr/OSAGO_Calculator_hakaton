@@ -26,7 +26,7 @@ public class CallRetrofit {
 
     public void getDataCoff(Activity activity, Map<String, String> map){
 
-        RetrofitClient.getInstance().getApi().createUser(map).enqueue(new Callback<ArrayHeader>() {
+        RetrofitClient.getInstance().getApi().pushCoff(map).enqueue(new Callback<ArrayHeader>() {
             @Override
             public void onResponse(Call<ArrayHeader> call, Response<ArrayHeader> response) {
                 if (response.isSuccessful()){

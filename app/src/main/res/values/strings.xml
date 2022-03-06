@@ -43,6 +43,7 @@
     <string name="hint_dialog_min_staj">Введите минимальный стаж</string>
     <string name="hint_dialog_no_accidents">Введите сколько лет небыло аварий</string>
     <string name="text_button_dialog">Подтвердить</string>
+    <string name="action_bar_text">Расчет цены полиса</string>
 
 
     <string name="x">х</string>
@@ -51,6 +52,16 @@
         <item>Москва</item>
         <item>Магнитогорск</item>
         <item>Магадан</item>
+        <item>Новосибирск</item>
+        <item>Барнаул</item>
+        <item>Славгород</item>
+        <item>Рязань</item>
+        <item>Казань</item>
+        <item>Хабаровск</item>
+        <item>Сочи</item>
+        <item>Омск</item>
+        <item>Томск</item>
+        <item>Санкт-питербург</item>
     </string-array>
 
     <string-array name="power">

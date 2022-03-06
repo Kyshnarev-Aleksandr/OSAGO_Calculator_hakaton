@@ -7,6 +7,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.aleksandr_kushnarev.osagocalculator.OpenCoff;
@@ -23,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     Button button_add;
     ShowDialog showDialog;
 
+    ImageView imageView;
+    LinearLayout layout;
+    RelativeLayout coefficient_click;
+
     static final int CITY_DIALOG = 1;
     static final int POWER_DIALOG = 2;
     static final int DRIVER_DIALOG = 3;
@@ -37,11 +44,10 @@ public class MainActivity extends AppCompatActivity {
         //Инициализация
         init();
         //открытие плашки коффициентов
-       OpenCoff open_Coff = new OpenCoff(MainActivity.this);
+       OpenCoff open_Coff = new OpenCoff(MainActivity.this, imageView, layout ,coefficient_click);
        open_Coff.getOpen();
 
-                //!!!!
-            //пренести в отдельный метод и передать все поля через интент
+
        button_add.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -50,10 +56,15 @@ public class MainActivity extends AppCompatActivity {
        });
 
     }
-        ///!!!!
+
     public void start_new_activity() {
-        //передать сюда все параметры
         Intent intent = new Intent(MainActivity.this, List_Activity.class);
+        intent.putExtra("BT", koff_BT_close.getText().toString());
+        intent.putExtra("KM", koff_KM_close.getText().toString());
+        intent.putExtra("KT", koff_KT_close.getText().toString());
+        intent.putExtra("KBM", koff_KBM_close.getText().toString());
+        intent.putExtra("KVS", koff_KVS_close.getText().toString());
+        intent.putExtra("KO", koff_KO_close.getText().toString());
         startActivity(intent);
     }
 
@@ -87,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
         textView_min_staj = findViewById(R.id.textView_min_staj);
         crash_button = findViewById(R.id.crash_button);
         textView_crash = findViewById(R.id.textView_crash);
+
+        imageView = findViewById(R.id.image_open_koff);
+        layout = findViewById(R.id.setting_LL_open);
+        coefficient_click = findViewById(R.id.coefficient_click);
     }
 
     //нажатие на поле для открытия шторки
@@ -150,9 +165,9 @@ public class MainActivity extends AppCompatActivity {
         koff_KVS_open.setText(KVS);
 
         //если заполнены не все поля то кнопку не разблокируем
-        if (!textView_city.getText().toString().equals("") || !textView_power.getText().toString().equals("")
-                || !textView_driver.getText().toString().equals("") || !textView_min_staj.getText().toString().equals("")
-                || !textView_crash.getText().toString().equals("")){
+        if (!textView_city.getText().toString().equals("") && !textView_power.getText().toString().equals("")
+                && !textView_driver.getText().toString().equals("") && !textView_min_staj.getText().toString().equals("")
+                && !textView_crash.getText().toString().equals("")){
             button_add.setBackgroundResource(R.drawable.background_button_ready);
             button_add.setTextColor(Color.WHITE);
             button_add.setEnabled(true);

@@ -15,16 +15,14 @@ public class OpenCoff {
 
     Boolean close = true;
 
-    public OpenCoff(Activity context) {
-        this.activity = context;
+    public OpenCoff(Activity activity, ImageView imageView, LinearLayout layout, RelativeLayout coefficient_click) {
+        this.activity = activity;
+        this.imageView = imageView;
+        this.layout = layout;
+        this.coefficient_click = coefficient_click;
     }
 
     public void getOpen(){
-        //инициализация
-        imageView = activity.findViewById(R.id.image_open_koff);
-        layout = activity.findViewById(R.id.setting_LL_open);
-        coefficient_click = activity.findViewById(R.id.coefficient_click);
-
         //нажатие на картинку для открытия коффициента
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,10 +40,5 @@ public class OpenCoff {
                 }
             }
         });
-
-
     }
-
-
-
 }
