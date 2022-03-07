@@ -2,6 +2,7 @@ package com.aleksandr_kushnarev.osagocalculator;
 
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +23,10 @@ import java.util.List;
 public class AdapterInsurance extends RecyclerView.Adapter<AdapterInsurance.ViewHolder> {
 
     List<Offer> offer_List;
-    List<Branding> branding_List;
     Context context;
 
-    public AdapterInsurance(List<Offer> offerList, List<Branding> brandingList, Context context) {
+    public AdapterInsurance(List<Offer> offerList, Context context) {
         this.offer_List = offerList;
-        this.branding_List = brandingList;
         this.context = context;
     }
 
@@ -41,9 +40,7 @@ public class AdapterInsurance extends RecyclerView.Adapter<AdapterInsurance.View
     @Override
     public void onBindViewHolder(@NonNull AdapterInsurance.ViewHolder holder, int position) {
         Offer offer = offer_List.get(position);
-
-        branding_List = new ArrayList<>(Arrays.asList(offer.getBranding()));
-        Branding branding = branding_List.get(0);
+        Branding branding = offer.getBranding();
 
         holder.name.setText(offer.getName());
         holder.rating.setText(String.valueOf(offer.getRating()));

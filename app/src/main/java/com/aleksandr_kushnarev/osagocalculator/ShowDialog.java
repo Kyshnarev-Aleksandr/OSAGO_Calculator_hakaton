@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.aleksandr_kushnarev.osagocalculator.Activity.MainActivity;
@@ -50,7 +51,7 @@ public class ShowDialog {
     public void getShowDialog(){
         bottomSheet = new BottomSheetDialog(activity, R.style.BottomSheetDialogTheme);
         sheetView = LayoutInflater.from(activity.getApplicationContext())
-                .inflate(R.layout.bottom_sheet_item, (LinearLayout)activity.findViewById(R.id.sheet_conteiner));
+                .inflate(R.layout.bottom_sheet_item, (RelativeLayout)activity.findViewById(R.id.sheet_conteiner));
 
         textView_head_dialog = sheetView.findViewById(R.id.text_head_dialog);
         button_Dialog_next = sheetView.findViewById(R.id.button_next);

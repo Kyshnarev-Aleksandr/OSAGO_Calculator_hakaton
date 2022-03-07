@@ -40,7 +40,6 @@ public class List_Activity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     List<Offer> offer_List;
-    List<Branding> branding_List;
 
     ImageView imageView_list;
     LinearLayout layout_list, skilet_item;
@@ -67,11 +66,11 @@ public class List_Activity extends AppCompatActivity {
                 ArrayOffers example = response.body();
                 button_add_list.setText(example.getActionText());
 
-                offer_List = new ArrayList<>(Arrays.asList(example.getOffers()));
+                offer_List = example.getOffers();
 
                 LinearLayoutManager llm = new LinearLayoutManager(List_Activity.this);
                 recyclerView.setLayoutManager(llm);
-                AdapterInsurance adapterInsurance = new AdapterInsurance(offer_List, branding_List, List_Activity.this);
+                AdapterInsurance adapterInsurance = new AdapterInsurance(offer_List,List_Activity.this);
                 recyclerView.setAdapter(adapterInsurance);
             }
 
