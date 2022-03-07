@@ -1,23 +1,17 @@
 package com.aleksandr_kushnarev.osagocalculator;
 
 import android.content.Context;
-import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.aleksandr_kushnarev.osagocalculator.Model.Branding;
 import com.aleksandr_kushnarev.osagocalculator.Model.Offer;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestBuilder;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class AdapterInsurance extends RecyclerView.Adapter<AdapterInsurance.ViewHolder> {
@@ -46,10 +40,12 @@ public class AdapterInsurance extends RecyclerView.Adapter<AdapterInsurance.View
         holder.rating.setText(String.valueOf(offer.getRating()));
         holder.sum.setText(String.valueOf(offer.getPrice()) + " P");
 
-        //Переделаю, найду нормальную библиотеку для загрузки SVG!
-        Glide.with(context).load("https://s44751.cos.ngenix.net/d0b31aa9-9912-4497-bc13-db50eab90b1f.svg").into(holder.imageView_item);
+        String url = branding.getBankLogoUrlSVG();
 
-        //Picasso.get().load("https://avatars.mds.yandex.net/i?id=355ba6a774a9fdc4f10e699ecc5cab7c-5869368-images-thumbs&n=13").into(holder.imageView_item);
+
+        SVGLoader.getSVG(holder.imageView_item, url);
+
+
     }
 
     @Override
