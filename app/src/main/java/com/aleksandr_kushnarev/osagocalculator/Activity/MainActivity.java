@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
     TextView city_button, textView_city, power_button, textView_power, driver_button, textView_driver,
             old_button, textView_old, min_staj_button, textView_min_staj, crash_button, textView_crash;
     Button button_add;
-    ShowDialog showDialog;
+    ShowDialog show_Dialog;
 
-    ImageView imageView;
+    ImageView image_View;
     LinearLayout layout;
     RelativeLayout coefficient_click;
 
@@ -44,9 +44,8 @@ public class MainActivity extends AppCompatActivity {
         //Инициализация
         init();
         //открытие плашки коффициентов
-       OpenCoff open_Coff = new OpenCoff(MainActivity.this, imageView, layout ,coefficient_click);
+       OpenCoff open_Coff = new OpenCoff(image_View, layout ,coefficient_click);
        open_Coff.getOpen();
-
 
        button_add.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -54,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                start_new_activity();
            }
        });
-
     }
 
     public void start_new_activity() {
@@ -99,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         crash_button = findViewById(R.id.crash_button);
         textView_crash = findViewById(R.id.textView_crash);
 
-        imageView = findViewById(R.id.image_open_koff);
+        image_View = findViewById(R.id.image_open_koff);
         layout = findViewById(R.id.setting_LL_open);
         coefficient_click = findViewById(R.id.coefficient_click);
     }
@@ -107,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
     //нажатие на поле для открытия шторки
     public void click_Coff(View view) {
         //открытие диалогового окна
-        showDialog = new ShowDialog(MainActivity.this);
-        showDialog.getShowDialog();
+        show_Dialog = new ShowDialog(this);
+        show_Dialog.getShowDialog();
         switch (view.getId()){
             case R.id.LL_city:dataDialog(CITY_DIALOG);
                 break;
@@ -127,22 +125,22 @@ public class MainActivity extends AppCompatActivity {
     //Метод для отображение информаций в диалоге
     public void dataDialog(int key){
         switch (key){
-            case CITY_DIALOG: showDialog.setDataBodyDialog(city_button, textView_city, getResources().getStringArray(R.array.city),
+            case CITY_DIALOG: show_Dialog.setDataBodyDialog(city_button, textView_city,
                         R.string.hint_dialog_city, "crash", key);
                 break;
-            case POWER_DIALOG: showDialog.setDataBodyDialog(power_button, textView_power, getResources().getStringArray(R.array.power),
+            case POWER_DIALOG: show_Dialog.setDataBodyDialog(power_button, textView_power,
                         R.string.hint_dialog_power, "power", key);
                 break;
-            case DRIVER_DIALOG: showDialog.setDataBodyDialog(driver_button, textView_driver, getResources().getStringArray(R.array.driver),
+            case DRIVER_DIALOG: show_Dialog.setDataBodyDialog(driver_button, textView_driver,
                         R.string.hint_dialog_drivers, "drivers", key);
                 break;
-            case OLD_DIALOG: showDialog.setDataBodyDialog(old_button, textView_old, getResources().getStringArray(R.array.old),
+            case OLD_DIALOG: show_Dialog.setDataBodyDialog(old_button, textView_old,
                         R.string.hint_dialog_old_drivers, "old", key);
                 break;
-            case MIN_STAJ_DIALOG: showDialog.setDataBodyDialog(min_staj_button, textView_min_staj, getResources().getStringArray(R.array.min_staj),
+            case MIN_STAJ_DIALOG: show_Dialog.setDataBodyDialog(min_staj_button, textView_min_staj,
                         R.string.hint_dialog_min_staj, "staj", key);
                 break;
-            case CRASH_DIALOG: showDialog.setDataBodyDialog(crash_button, textView_crash, getResources().getStringArray(R.array.crash),
+            case CRASH_DIALOG: show_Dialog.setDataBodyDialog(crash_button, textView_crash,
                         R.string.hint_dialog_no_accidents, "accidents", key);
                 break;
         }
@@ -173,5 +171,4 @@ public class MainActivity extends AppCompatActivity {
             button_add.setEnabled(true);
         }
     }
-
 }

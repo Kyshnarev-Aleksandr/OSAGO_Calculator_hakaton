@@ -8,21 +8,25 @@
     android:layout_height="match_parent"
     tools:context=".Activity.List_Activity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        style="@style/Toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
 
-    <ScrollView
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar">
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/relative_conteiner"
+        >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <RelativeLayout
         android:id="@+id/coefficient_click_list"
@@ -678,21 +682,30 @@
 
     </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-    <Button
-        android:id="@+id/button_add_list"
+    <RelativeLayout
+        android:id="@+id/relative_conteiner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/roboto_medium"
-        android:textColor="@color/white"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/background_button_ready"
-        android:textSize="16sp"
-        android:textAllCaps="false" />
+        >
+        <Button
+            android:id="@+id/button_add_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/background_button_ready"
+            android:textSize="16sp"
+            android:textAllCaps="false" />
+    </RelativeLayout>
+
+
 
 </RelativeLayout>

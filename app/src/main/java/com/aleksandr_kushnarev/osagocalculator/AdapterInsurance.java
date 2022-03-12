@@ -35,17 +35,11 @@ public class AdapterInsurance extends RecyclerView.Adapter<AdapterInsurance.View
     public void onBindViewHolder(@NonNull AdapterInsurance.ViewHolder holder, int position) {
         Offer offer = offer_List.get(position);
         Branding branding = offer.getBranding();
-
         holder.name.setText(offer.getName());
         holder.rating.setText(String.valueOf(offer.getRating()));
         holder.sum.setText(String.valueOf(offer.getPrice()) + " P");
-
         String url = branding.getBankLogoUrlSVG();
-
-
         SVGLoader.getSVG(holder.imageView_item, url);
-
-
     }
 
     @Override
@@ -63,11 +57,9 @@ public class AdapterInsurance extends RecyclerView.Adapter<AdapterInsurance.View
 
             image_star = itemView.findViewById(R.id.Image_star);
             imageView_item = itemView.findViewById(R.id.imageView_item);
-
             name = itemView.findViewById(R.id.textView_item_name);
             rating = itemView.findViewById(R.id.textView_item_rating);
             sum = itemView.findViewById(R.id.item_textView_Sum);
-
         }
     }
 }

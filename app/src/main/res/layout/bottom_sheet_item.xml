@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     android:id="@+id/sheet_conteiner"
-    android:orientation="vertical"
-    android:background="@drawable/background_bottom_sheed"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="true"
+    android:fitsSystemWindows= "true"
+    android:scrollbars="none"
+    android:layout_alignParentBottom="true"
+    android:background="@android:color/transparent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
+        android:id="@+id/sd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="45dp"
+        android:background="@drawable/background_bottom_sheed"
         android:orientation="vertical">
 
         <TextView
@@ -26,24 +31,23 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/edit_TT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:paddingTop="17dp"
-            android:paddingBottom="17dp"
-            android:textCursorDrawable="@drawable/color_cursor"
-            android:textSize="17sp"
-            android:focusable="true"
-            android:layout_centerVertical="true"
             android:background="@drawable/bottom_sheet_edit_text"
+            android:layout_marginTop="16dp"
+            android:paddingBottom="17dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:textColor="@color/black"
-            android:paddingStart="16dp"/>
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_TT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/image_delete_text"
+                android:paddingStart="16dp"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:textSize="17sp" />
 
             <ImageView
                 android:id="@+id/image_delete_text"
@@ -55,47 +59,47 @@
                 android:layout_marginEnd="37dp"/>
         </RelativeLayout>
 
-        <ListView
-            android:id="@+id/listView"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="250dp"/>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/button_next"
-                android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
                 android:layout_gravity="end"
-                android:layout_marginTop="45dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/background_button_bottom_sheet"
-                android:drawableEnd="@drawable/ic_right"
-                android:paddingStart="16dp"
-                android:paddingTop="14dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="14dp"
-                android:text="@string/Button_dialog_next"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="150dp"
+                android:gravity="bottom"
+                android:layout_marginBottom="60dp"
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/image_go_back_dialog"
-                android:layout_width="78dp"
-                android:layout_height="78dp"
-                android:layout_marginTop="45dp"
-                android:background="@android:color/transparent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/button_back" />
-        </RelativeLayout>
+                <Button
+                    android:id="@+id/button_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:textAlignment="textStart"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/background_button_bottom_sheet"
+                    android:paddingStart="16dp"
+                    android:paddingTop="14dp"
+                    android:text="@string/Button_dialog_next"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="14dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
 
-
+                <ImageButton
+                    android:id="@+id/image_go_back_dialog"
+                    android:layout_width="78dp"
+                    android:layout_height="78dp"
+                    android:layout_marginTop="45dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/button_back" />
+            </RelativeLayout>
+        </ScrollView>
     </LinearLayout>
-
-
-
-
 </RelativeLayout>

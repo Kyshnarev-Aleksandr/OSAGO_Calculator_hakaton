@@ -17,14 +17,11 @@ import android.widget.TextView;
 
 import com.aleksandr_kushnarev.osagocalculator.AdapterInsurance;
 import com.aleksandr_kushnarev.osagocalculator.Model.ArrayOffers;
-import com.aleksandr_kushnarev.osagocalculator.Model.Branding;
 import com.aleksandr_kushnarev.osagocalculator.Model.Offer;
 import com.aleksandr_kushnarev.osagocalculator.OpenCoff;
 import com.aleksandr_kushnarev.osagocalculator.R;
 import com.aleksandr_kushnarev.osagocalculator.Retrofit.RetrofitClient;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -34,13 +31,10 @@ import retrofit2.Response;
 public class List_Activity extends AppCompatActivity {
 
     Toolbar toolbar;
-
     TextView koff_BT_close,koff_KM_close,koff_KT_close,koff_KBM_close,koff_KO_close,koff_KVS_close
             ,koff_BT_open,koff_KM_open,koff_KT_open,koff_KBM_open,koff_KO_open,koff_KVS_open;
-
-    RecyclerView recyclerView;
+    RecyclerView recycler_View;
     List<Offer> offer_List;
-
     ImageView imageView_list;
     LinearLayout layout_list, skilet_item;
     RelativeLayout coefficient_click_list;
@@ -50,30 +44,27 @@ public class List_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-
         init();
         getData();
 
-        OpenCoff open_Coff = new OpenCoff(List_Activity.this, imageView_list, layout_list ,coefficient_click_list);
+        OpenCoff open_Coff = new OpenCoff(imageView_list, layout_list ,coefficient_click_list);
         open_Coff.getOpen();
 
         skilet_item.setVisibility(View.VISIBLE);
-
         RetrofitClient.getInstance().getApi().pushInsurance().enqueue(new Callback<ArrayOffers>() {
             @Override
             public void onResponse(Call<ArrayOffers> call, Response<ArrayOffers> response) {
                 skilet_item.setVisibility(View.GONE);
-                ArrayOffers example = response.body();
-                button_add_list.setText(example.getActionText());
+                ArrayOffers array_Offers = response.body();
+                button_add_list.setText(array_Offers.getActionText());
 
-                offer_List = example.getOffers();
+                offer_List = array_Offers.getOffers();
 
                 LinearLayoutManager llm = new LinearLayoutManager(List_Activity.this);
-                recyclerView.setLayoutManager(llm);
-                AdapterInsurance adapterInsurance = new AdapterInsurance(offer_List,List_Activity.this);
-                recyclerView.setAdapter(adapterInsurance);
+                recycler_View.setLayoutManager(llm);
+                AdapterInsurance adapter_Insurance = new AdapterInsurance(offer_List,List_Activity.this);
+                recycler_View.setAdapter(adapter_Insurance);
             }
-
             @Override
             public void onFailure(Call<ArrayOffers> call, Throwable t) {
 
@@ -99,10 +90,8 @@ public class List_Activity extends AppCompatActivity {
         koff_KVS_open.setText(intent.getStringExtra("KVS"));
     }
 
-
     private void init() {
-        recyclerView = findViewById(R.id.recycleView);
-
+        recycler_View = findViewById(R.id.recycleView);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.action_bar_text);
@@ -131,17 +120,13 @@ public class List_Activity extends AppCompatActivity {
         skilet_item = findViewById(R.id.skilet_item);
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
                 return true;
-            // ...
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }

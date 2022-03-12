@@ -13,7 +13,6 @@ object SVGLoader {
 
     @SuppressLint("WrongViewCast")
     fun ImageView.loadSvgOrOthers(myUrl: String?) {
-
         myUrl?.let {
             if (it.toLowerCase(Locale.ENGLISH).endsWith("svg")) {
                 val imageLoader = ImageLoader.Builder(this.context)
@@ -29,9 +28,7 @@ object SVGLoader {
             } else {
                 this.load(myUrl)
             }
-
         }
-
     }
     @kotlin.jvm.JvmStatic
     fun getSVG(imageView: ImageView, url : String?){

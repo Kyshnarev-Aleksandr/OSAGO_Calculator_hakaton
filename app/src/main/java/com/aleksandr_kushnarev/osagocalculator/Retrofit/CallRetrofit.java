@@ -1,6 +1,7 @@
 package com.aleksandr_kushnarev.osagocalculator.Retrofit;
 
 import android.app.Activity;
+import android.content.Context;
 
 import com.aleksandr_kushnarev.osagocalculator.Activity.MainActivity;
 import com.aleksandr_kushnarev.osagocalculator.Model.ArrayHeader;
@@ -24,14 +25,13 @@ public class CallRetrofit {
     private static final Integer Position_KVS_COFF = 4;
     private static final Integer Position_KO_COFF = 5;
 
-    public void getDataCoff(Activity activity, Map<String, String> map){
-
+    public void getDataCoff(Context context, Map<String, String> map){
         RetrofitClient.getInstance().getApi().pushCoff(map).enqueue(new Callback<ArrayHeader>() {
             @Override
             public void onResponse(Call<ArrayHeader> call, Response<ArrayHeader> response) {
                 if (response.isSuccessful()){
                     ArrayHeader array_Header = response.body();
-                    List<Factor> list = new ArrayList<>(Arrays.asList(array_Header.getFactors()));
+                    List<Factor> list = array_Header.getFactors();
 
                     String BT = list.get(Position_BT_COFF).getHeaderValue();
                     String KM = list.get(Position_KM_COFF).getHeaderValue();
@@ -40,20 +40,12 @@ public class CallRetrofit {
                     String KVS = list.get(Position_KVS_COFF).getHeaderValue();
                     String KO = list.get(Position_KO_COFF).getHeaderValue();
 
-                    ((MainActivity)activity).addCoff(BT,KM,KT,KBM,KVS,KO);
+                    ((MainActivity)context).addCoff(BT,KM,KT,KBM,KVS,KO);
                 }
-
             }
-
             @Override
             public void onFailure(Call<ArrayHeader> call, Throwable t) {
-
             }
         });
-
-
-
     }
-
-
 }
