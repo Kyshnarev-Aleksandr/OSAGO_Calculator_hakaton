@@ -35,6 +35,12 @@
     <string name="sum_KVS">1 или 1,99</string>
     <string name="Text_koff">Ваши коэффиценты</string>
     <string name="Text_noDrivers">Без ограничений</string>
+    <string name="BT">BT</string>
+    <string name="KM">KM</string>
+    <string name="KT">KT</string>
+    <string name="KBM">KBM</string>
+    <string name="KVS">KVS</string>
+    <string name="KO">KO</string>
 
     <string name="hint_dialog_city">Введите город</string>
     <string name="hint_dialog_power">Введите мощность</string>

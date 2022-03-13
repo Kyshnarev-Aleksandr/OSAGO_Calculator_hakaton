@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/buy_dialog_con">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_bottom_sheed"
+        android:orientation="vertical">
+
+        <TextView
+        android:id="@+id/text_head_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ваш полис успешно оформлен"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <ImageView
+            android:id="@+id/imageView_item_dialog_insurance"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/item_textView_Sum"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/imageView_item_dialog_insurance">
+
+            <TextView
+                android:id="@+id/textView_item_name_insurance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:textSize="14sp"
+                android:text="dhfgsdhfkjs"
+                android:textColor="@color/main_100"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/Image_star"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/star_image"/>
+
+                <TextView
+                    android:id="@+id/textView_item_rating_insurance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="12sp"
+                    android:layout_toEndOf="@+id/Image_star"
+                    android:layout_marginStart="6dp"
+                    android:text="dhfgsdhfkjs" />
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/item_textView_Sum_insurance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/main_100"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="10 005  Руб" />
+
+
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_conteiner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_alignParentBottom="true"
+            >
+            <Button
+                android:id="@+id/button_ready"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/white"
+                android:text="Готово"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/background_button_ready"
+                android:textSize="16sp"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

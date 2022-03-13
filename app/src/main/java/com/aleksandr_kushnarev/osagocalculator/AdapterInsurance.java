@@ -1,6 +1,7 @@
 package com.aleksandr_kushnarev.osagocalculator;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.aleksandr_kushnarev.osagocalculator.Activity.MainActivity;
 import com.aleksandr_kushnarev.osagocalculator.Model.Branding;
 import com.aleksandr_kushnarev.osagocalculator.Model.Offer;
 
@@ -40,6 +43,21 @@ public class AdapterInsurance extends RecyclerView.Adapter<AdapterInsurance.View
         holder.sum.setText(String.valueOf(offer.getPrice()) + " P");
         String url = branding.getBankLogoUrlSVG();
         SVGLoader.getSVG(holder.imageView_item, url);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.putExtra("key", true);
+                intent.putExtra("name", offer.getName() );
+                intent.putExtra("rating", String.valueOf(offer.getRating()));
+                intent.putExtra("sum",String.valueOf(offer.getPrice()) );
+                intent.putExtra("url", url);
+                context.startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override

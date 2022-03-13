@@ -5,16 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.aleksandr_kushnarev.osagocalculator.Dialog.BuyDialog;
 import com.aleksandr_kushnarev.osagocalculator.OpenCoff;
 import com.aleksandr_kushnarev.osagocalculator.R;
-import com.aleksandr_kushnarev.osagocalculator.ShowDialog;
+import com.aleksandr_kushnarev.osagocalculator.Dialog.ShowDialog;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
             old_button, textView_old, min_staj_button, textView_min_staj, crash_button, textView_crash;
     Button button_add;
     ShowDialog show_Dialog;
-
     ImageView image_View;
     LinearLayout layout;
     RelativeLayout coefficient_click;
@@ -47,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
        OpenCoff open_Coff = new OpenCoff(image_View, layout ,coefficient_click);
        open_Coff.getOpen();
 
+       getIntentInsurance();
+
        button_add.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -55,17 +59,30 @@ public class MainActivity extends AppCompatActivity {
        });
     }
 
+    //получение данных о страховой и открытие шторки
+    private void getIntentInsurance() {
+      Intent intent = getIntent();
+      boolean key = intent.getBooleanExtra("key", false);
+        if (key == true){
+            BuyDialog buyDialog = new BuyDialog();
+            buyDialog.createDialog(this,
+                    intent.getStringExtra("name"),
+                    intent.getStringExtra("rating"),
+                    intent.getStringExtra("sum"),
+                    intent.getStringExtra("url"));
+        }
+    }
+    //Переход на след активити
     public void start_new_activity() {
         Intent intent = new Intent(MainActivity.this, List_Activity.class);
-        intent.putExtra("BT", koff_BT_close.getText().toString());
-        intent.putExtra("KM", koff_KM_close.getText().toString());
-        intent.putExtra("KT", koff_KT_close.getText().toString());
-        intent.putExtra("KBM", koff_KBM_close.getText().toString());
-        intent.putExtra("KVS", koff_KVS_close.getText().toString());
-        intent.putExtra("KO", koff_KO_close.getText().toString());
+        intent.putExtra(String.valueOf(R.string.BT), koff_BT_close.getText().toString());
+        intent.putExtra(String.valueOf(R.string.KM), koff_KM_close.getText().toString());
+        intent.putExtra(String.valueOf(R.string.KT), koff_KT_close.getText().toString());
+        intent.putExtra(String.valueOf(R.string.KBM), koff_KBM_close.getText().toString());
+        intent.putExtra(String.valueOf(R.string.KVS), koff_KVS_close.getText().toString());
+        intent.putExtra(String.valueOf(R.string.KO), koff_KO_close.getText().toString());
         startActivity(intent);
     }
-
     //Инициализация
     private void init() {
         koff_BT_close = findViewById(R.id.koff_BT_close);
@@ -101,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
         layout = findViewById(R.id.setting_LL_open);
         coefficient_click = findViewById(R.id.coefficient_click);
     }
-
     //нажатие на поле для открытия шторки
     public void click_Coff(View view) {
         //открытие диалогового окна
@@ -145,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
     //получили данные и вставлем их
     public void addCoff(String BT, String KM, String KT, String KBM, String KVS, String KO){
         koff_BT_close.setText(BT);

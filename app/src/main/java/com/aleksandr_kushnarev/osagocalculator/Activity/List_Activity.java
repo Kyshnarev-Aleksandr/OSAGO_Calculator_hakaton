@@ -75,19 +75,19 @@ public class List_Activity extends AppCompatActivity {
     //получаем коффициенты
     private void getData() {
         Intent intent = getIntent();
-        koff_BT_close.setText(intent.getStringExtra("BT"));
-        koff_KM_close.setText(intent.getStringExtra("KM"));
-        koff_KT_close.setText(intent.getStringExtra("KT"));
-        koff_KBM_close.setText(intent.getStringExtra("KBM"));
-        koff_KO_close.setText(intent.getStringExtra("KO"));
-        koff_KVS_close.setText(intent.getStringExtra("KVS"));
+        koff_BT_close.setText(intent.getStringExtra(String.valueOf(R.string.BT)));
+        koff_KM_close.setText(intent.getStringExtra(String.valueOf(R.string.KM)));
+        koff_KT_close.setText(intent.getStringExtra(String.valueOf(R.string.KT)));
+        koff_KBM_close.setText(intent.getStringExtra(String.valueOf(R.string.KBM)));
+        koff_KO_close.setText(intent.getStringExtra(String.valueOf(R.string.KVS)));
+        koff_KVS_close.setText(intent.getStringExtra(String.valueOf(R.string.KO)));
 
-        koff_BT_open.setText(intent.getStringExtra("BT"));
-        koff_KM_open.setText(intent.getStringExtra("KM"));
-        koff_KT_open.setText(intent.getStringExtra("KT"));
-        koff_KBM_open.setText(intent.getStringExtra("KBM"));
-        koff_KO_open.setText(intent.getStringExtra("KO"));
-        koff_KVS_open.setText(intent.getStringExtra("KVS"));
+        koff_BT_open.setText(intent.getStringExtra(String.valueOf(R.string.BT)));
+        koff_KM_open.setText(intent.getStringExtra(String.valueOf(R.string.KM)));
+        koff_KT_open.setText(intent.getStringExtra(String.valueOf(R.string.KT)));
+        koff_KBM_open.setText(intent.getStringExtra(String.valueOf(R.string.KBM)));
+        koff_KO_open.setText(intent.getStringExtra(String.valueOf(R.string.KVS)));
+        koff_KVS_open.setText(intent.getStringExtra(String.valueOf(R.string.KO)));
     }
 
     private void init() {

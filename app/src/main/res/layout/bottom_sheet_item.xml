@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/sheet_conteiner"
+<RelativeLayout android:id="@+id/sheet_conteiner"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentLeft="true"
-    android:fitsSystemWindows= "true"
+    android:fitsSystemWindows="true"
     android:scrollbars="none"
     android:layout_alignParentBottom="true"
     android:background="@android:color/transparent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:id="@+id/sd"
@@ -60,6 +60,7 @@
         </RelativeLayout>
 
         <ScrollView
+            android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <RelativeLayout
@@ -68,9 +69,7 @@
                 android:layout_gravity="end"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:layout_marginTop="150dp"
                 android:gravity="bottom"
-                android:layout_marginBottom="60dp"
                 android:orientation="horizontal">
 
                 <Button
